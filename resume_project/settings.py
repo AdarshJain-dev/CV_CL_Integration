@@ -63,7 +63,9 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import os
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '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')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+ALLOWED_HOSTS = ['your-app-name.onrender.com']
