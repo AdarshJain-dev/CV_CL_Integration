@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Cover Letter Generator{% endblock %}
+{% block content %}
+<div class="card">
+  <h2>Cover Letter Generator</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn-submit">Generate Cover Letter</button>
+  </form>
+
+  {% if request.session.cover_text %}
+  <div class="download-links">
+    <a href="{% url 'cover_letter_docx' %}" class="btn-download">Download DOCX</a>
+    <a href="{% url 'cover_letter_pdf' %}" class="btn-download">Download PDF</a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2cm; line-height: 1.5; }
+    header, footer { text-align: right; color: #888; font-size: 0.9rem; }
+    article { margin-top: 1cm; }
+  </style>
+</head>
+<body>
+<header>
+  {{ now|date:'F j, Y' }}
+</header>
+<article>
+  {% for line in body.splitlines %}
+    <p>{{ line }}</p>
+  {% endfor %}
+</article>
+<footer>
+  {{ user.get_full_name }}
+</footer>
+</body>
+</html>
