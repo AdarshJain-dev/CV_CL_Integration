@@ -184,10 +184,17 @@ def cover_letter_view(request):
                     resume_text = "\n".join(p.text for p in docx.paragraphs)
 
             prompt = (
-                f"Write a professional cover letter. Job:\n{job_text}\n\n"
-                f"Resume highlights:\n{resume_text}\n\n"
-                "Begin with Dear Hiring Manager and close with Sincerely."
-            )
+            "You are an expert cover letter writer.\n\n"
+            "Write a personalized, professional cover letter based on the following job description and resume text.\n\n"
+            f"Job Description:\n{job_text}\n\n"
+            f"Resume:\n{resume_text}\n\n"
+            "Instructions:\n"
+            "- Extract the applicant’s name, email, phone number, and address from the resume.\n"
+            "- Begin the letter with a header that includes the extracted contact details.\n"
+            "- Address the letter with 'Dear Hiring Manager'.\n"
+            "- Highlight the applicant’s qualifications, matching resume details with the job description.\n"
+            "- Keep the tone professional and the structure clear.\n"
+        )
             resp = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
