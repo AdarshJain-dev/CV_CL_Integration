@@ -3,7 +3,7 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-dev-key'  # Replace this with a secure key in production
+SECRET_KEY = os.getenv('SECRET_KEY')  # Replace this with a secure key in production
 
 DEBUG = True
 ALLOWED_HOSTS = []
@@ -72,4 +72,4 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['cv-resume-integration.onrender.com','localhost']

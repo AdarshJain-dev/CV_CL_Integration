@@ -1,1 +1,1 @@
-web: gunicorn CV_CL_INTEGRATION
+web: gunicorn resume_project.wsgi:application
