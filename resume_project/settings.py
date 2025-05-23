@@ -74,4 +74,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-ALLOWED_HOSTS = ['cv-resume-integration.onrender.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['cv-cl-integration.onrender.comm','localhost','127.0.0.1']
