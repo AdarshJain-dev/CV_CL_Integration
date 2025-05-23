@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: cv-cl-integration
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn resume_project.wsgi:application --timeout 120
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
