@@ -22,7 +22,7 @@ from .forms import ResumeForm, CoverLetterForm
 # ————— Globals —————
 client = OpenAI(api_key=settings.OPENAI_API_KEY)
 BLACKLIST = {"json", "[]", ""}
-
+print("client:", client.api_key)
 # ————— Helper: TF-IDF fallback —————
 def extract_keywords_tfidf(text, top_n=3):
     vec = TfidfVectorizer(stop_words="english", max_features=1000)

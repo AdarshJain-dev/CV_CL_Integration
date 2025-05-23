@@ -6,8 +6,10 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')  # Replace this with a secure key in production
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+print("settings.OPENAI_API_KEY:", OPENAI_API_KEY)
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
@@ -69,9 +71,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # optional for dev
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-ALLOWED_HOSTS = ['cv-resume-integration.onrender.com','localhost']
+ALLOWED_HOSTS = ['cv-resume-integration.onrender.com','localhost','127.0.0.1']
