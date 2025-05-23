@@ -61,6 +61,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # optional for dev
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
 
 import os
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
@@ -69,3 +71,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
 ALLOWED_HOSTS = ['*']
+
+MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # add this after SecurityMiddleware
+    ...
+]
