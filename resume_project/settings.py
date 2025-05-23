@@ -68,4 +68,4 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-ALLOWED_HOSTS = ['cv_cl_integration.onrender.com']
+ALLOWED_HOSTS = ['*']
