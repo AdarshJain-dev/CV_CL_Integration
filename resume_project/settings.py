@@ -10,7 +10,6 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 print("settings.OPENAI_API_KEY:", OPENAI_API_KEY)
 
 DEBUG = False
-ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -74,4 +73,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-ALLOWED_HOSTS = ['cv-cl-integration.onrender.comm','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['cv-cl-integration.onrender.com','localhost','127.0.0.1']
